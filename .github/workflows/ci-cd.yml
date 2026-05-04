@@ -16,4 +16,4 @@ jobs:
         run: docker build -t gym-backend ./backend
 
       - name: Build Frontend Image
-        run: docker build -t gym-frontend ./frontendq
+        run: docker build -t gym-frontend ./frontend
