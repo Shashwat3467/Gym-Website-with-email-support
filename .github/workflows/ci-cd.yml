@@ -1,0 +1,19 @@
+name: Gym Project CI/CD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build Backend Image
+        run: docker build -t gym-backend ./backend
+
+      - name: Build Frontend Image
+        run: docker build -t gym-frontend ./frontendq

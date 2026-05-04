@@ -32,9 +32,13 @@ const Contact = () => {
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      toast.error(error.response.data.message);
+      toast.error(
+        error.response?.data?.message || "Something went wrong"
+      );
     }
   };
+
+  console.log(import.meta.env.VITE_API_URL);
 
   return (
     <section className="contact">

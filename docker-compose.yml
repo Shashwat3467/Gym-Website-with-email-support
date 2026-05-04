@@ -1,0 +1,19 @@
+services:
+  backend:
+    image: gym-backend
+    ports:
+      - "5001:5001"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - query_data:/app/data
+
+  frontend:
+    image: gym-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+volumes:
+  query_data:
