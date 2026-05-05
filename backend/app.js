@@ -86,5 +86,6 @@ router.post("/send/mail", async (req, res) => {
 app.use("/api", router);
 
 app.listen(process.env.PORT, () => {
+  console.log("testing the ci pipeline");
   console.log(`Server listening to port ${process.env.PORT}`);
 });
